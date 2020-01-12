@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { DarkBlue } from "../assets/style";
+import { DarkBlue } from "../assets/theme";
 
 class MainScreen extends React.Component {
   render() {

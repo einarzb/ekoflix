@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
-import { EkoGradient } from "../assets/style";
+import { EkoGradient } from "../assets/theme";
 
 class NavBar extends Component {
   render() {
