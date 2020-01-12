@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
+import { DarkBlue } from "../assets/style";
 
 class MainScreen extends React.Component {
   render() {
@@ -15,7 +16,7 @@ class MainScreen extends React.Component {
 export default connect(null, null)(MainScreen);
 
 const Wrapper = styled.div`
-  background-color: #222831;
+  background-color: ${DarkBlue};
   margin-top: -1.1rem;
   display: inline-flex;
   flex-direction: column;

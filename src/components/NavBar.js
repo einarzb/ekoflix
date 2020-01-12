@@ -22,6 +22,12 @@ class NavBar extends Component {
 
 export default connect(null, null)(NavBar);
 
+const Bar = styled.nav`
+  background: ${EkoGradient};
+  max-height: 55px;
+  width: 100%;
+`;
+
 const NavUl = styled.ul`
   padding: 5px;
   font-size: 17px;
@@ -73,11 +79,3 @@ const Tab = styled.li`
     padding: 5px;
   }
 `;
-
-const Bar = styled.nav`
-  background: ${EkoGradient};
-  max-height: 55px;
-  width: 100%;
-`;
-
-//#F7B267
