@@ -17,10 +17,8 @@ export default connect(null, null)(MainScreen);
 
 const Wrapper = styled.div`
   background-color: ${DarkBlue};
-  margin-top: -1.1rem;
-  display: inline-flex;
-  flex-direction: column;
+  display: block;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
 `;
