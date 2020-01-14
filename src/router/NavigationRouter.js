@@ -13,13 +13,34 @@ const Home = asyncComponent({
 class NavigationRouter extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isScrolled: false
+    };
   }
 
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = e => {
+    if (window.scrollY === 0) {
+      this.setState({ isScrolled: false });
+    } else if (window.scrollY > 200) {
+      this.setState({ isScrolled: true });
+    }
+  };
+
   render() {
+    let { isScrolled } = this.state;
     return (
       <BrowserRouter>
-        <Header>
+        <Header
+          style={{ background: isScrolled ? EkoGradient : "transparent" }}
+        >
           <NavUl>
             <Tab>
               <Link to="/">
@@ -35,7 +56,7 @@ class NavigationRouter extends Component {
         </Switch>
 
         <Footer>
-          © 2020 Made with ❤️ by{" "}
+          © 2020 code with ❤️ by{" "}
           <a href="https://github.com/einarzb?tab=repositories" target="_blank">
             Einar
           </a>
@@ -64,13 +85,15 @@ const Footer = styled.footer`
 `;
 
 const Header = styled.nav`
-  background: ${EkoGradient};
-  height: 60px;
+  background: transparent;
+  height: 3.7rem;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9;
+  transition-timing-function: ease-in;
+  transition: all 3s;
 `;
 
 const NavUl = styled.ul`
