@@ -3,14 +3,16 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import { Wrapper } from "../assets/theme";
 
-class MainScreen extends React.Component {
+class MyListScreen extends React.Component {
   render() {
     return (
       <Fragment>
-        <Wrapper></Wrapper>
+        <Wrapper>
+          <h2>My List</h2>
+        </Wrapper>
       </Fragment>
     );
   }
 }
 
-export default connect(null, null)(MainScreen);
+export default connect(null, null)(MyListScreen);

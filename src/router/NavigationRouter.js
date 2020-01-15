@@ -3,11 +3,15 @@ import { BrowserRouter, Redirect, Switch, Route, Link } from "react-router-dom";
 import { asyncComponent } from "react-async-component";
 import styled from "styled-components";
 
-import { EkoGradient } from "../assets/theme";
-import { EKO } from "../assets/svgIndex";
+import { EkoGradient, BlackShadow } from "../assets/theme";
+import { EKO, PLUS } from "../assets/svgIndex";
 
 const Home = asyncComponent({
   resolve: () => import("../screens/MainScreen")
+});
+
+const MyList = asyncComponent({
+  resolve: () => import("../screens/MyListScreen")
 });
 
 class NavigationRouter extends Component {
@@ -29,7 +33,7 @@ class NavigationRouter extends Component {
   handleScroll = e => {
     if (window.scrollY === 0) {
       this.setState({ isScrolled: false });
-    } else if (window.scrollY > 200) {
+    } else if (window.scrollY > 50) {
       this.setState({ isScrolled: true });
     }
   };
@@ -38,13 +42,25 @@ class NavigationRouter extends Component {
     let { isScrolled } = this.state;
     return (
       <BrowserRouter>
-        <Header
-          style={{ background: isScrolled ? EkoGradient : "transparent" }}
-        >
+        <Header style={{ background: isScrolled ? EkoGradient : BlackShadow }}>
           <NavUl>
             <Tab>
               <Link to="/">
-                <img src={EKO} />
+                <Logo src={EKO} />
+              </Link>
+            </Tab>
+            <Tab>
+              <Link to="/">TV shows</Link>
+            </Tab>
+            <Tab>
+              <Link to="/">movies</Link>
+            </Tab>
+            <Tab>
+              <Link to="/">recently added</Link>
+            </Tab>
+            <Tab>
+              <Link to="/mylist">
+                my list <img src={PLUS} width="10" height="10" />
               </Link>
             </Tab>
           </NavUl>
@@ -52,6 +68,8 @@ class NavigationRouter extends Component {
 
         <Switch>
           <Route exact path="/" component={Home}></Route>
+          <Route exact path="/mylist" component={MyList}></Route>
+
           <Redirect from="*" to="/" />
         </Switch>
 
@@ -85,41 +103,59 @@ const Footer = styled.footer`
 `;
 
 const Header = styled.nav`
-  background: transparent;
-  height: 3.7rem;
+  height: 3.5rem;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9;
   transition-timing-function: ease-in;
-  transition: all 3s;
+  transition: all 1s;
 `;
 
 const NavUl = styled.ul`
+  font-size: 15px;
   padding: 5px;
-  font-size: 17px;
   margin-left: 1rem;
-  margin-top: 0rem;
-  @media (max-width: 768px) {
+  margin-top: 0.3rem;
+  display: inline-flex;
+  flex-direction: row;
+  color: #ffffff;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  width: 45vw;
+  @media only screen and (max-width: 60em) {
     margin-left: 0;
+    & img {
+      display: block;
+    }
   }
+`;
+
+const Logo = styled.img`
+  width: 4rem;
+  height: auto;
 `;
 
 const Tab = styled.li`
   list-style-type: none;
-  display: inline-flex;
-  flex-direction: row;
-  width: 50px;
-  margin: 10px;
-  justify-content: space-between;
-  color: #ffffff;
   text-align: center;
-  @media (max-width: 768px) {
-    width: 40px;
+  width: auto;
+  margin: 0 10px;
+  color: #ffffff;
+  & a {
+    color: #ffffff;
+    text-decoration: none;
+    &:hover {
+      color: #ffffff;
+    }
   }
-  & img {
-    width: 4rem;
-    height: auto;
+  @media only screen and (max-width: 60em) {
+    display: none;
+    &:first-child {
+      display: block;
+      margin: 5px;
+    }
   }
 `;
