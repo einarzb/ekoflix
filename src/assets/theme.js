@@ -16,6 +16,9 @@ export const Wrapper = styled.div`
   position: relative;
   overflow-y: auto;
   padding-top: 3.5rem;
-  padding-left: 3rem;
+  padding-left: 0;
   color: #ffffff;
+  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
+    width: 100%;
+  }
 `;

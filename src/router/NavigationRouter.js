@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { BrowserRouter, Redirect, Switch, Route, Link } from "react-router-dom";
 import { asyncComponent } from "react-async-component";
+
+//STYLING
 import styled from "styled-components";
-
 import { EkoGradient, BlackShadow } from "../assets/theme";
-import { EKO, PLUS } from "../assets/svgIndex";
+import { EKO, PLUS, SEARCH } from "../assets/svgIndex";
 
+//LAZY COMPONENTS
 const Home = asyncComponent({
   resolve: () => import("../screens/MainScreen")
 });
@@ -15,12 +17,9 @@ const MyList = asyncComponent({
 });
 
 class NavigationRouter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isScrolled: false
-    };
-  }
+  state = {
+    isScrolling: false
+  };
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
@@ -30,19 +29,19 @@ class NavigationRouter extends Component {
     window.removeEventListener("scroll", this.handleScroll);
   }
 
-  handleScroll = e => {
+  handleScroll = event => {
     if (window.scrollY === 0) {
-      this.setState({ isScrolled: false });
+      this.setState({ isScrolling: false });
     } else if (window.scrollY > 50) {
-      this.setState({ isScrolled: true });
+      this.setState({ isScrolling: true });
     }
   };
 
   render() {
-    let { isScrolled } = this.state;
+    let { isScrolling } = this.state;
     return (
       <BrowserRouter>
-        <Header style={{ background: isScrolled ? EkoGradient : BlackShadow }}>
+        <Header style={{ background: isScrolling ? EkoGradient : BlackShadow }}>
           <NavUl>
             <Tab>
               <Link to="/">
@@ -60,8 +59,11 @@ class NavigationRouter extends Component {
             </Tab>
             <Tab>
               <Link to="/mylist">
-                my list <img src={PLUS} width="10" height="10" />
+                my list <img src={PLUS} width="10" />
               </Link>
+            </Tab>
+            <Tab>
+              <Search src={SEARCH} />
             </Tab>
           </NavUl>
         </Header>
@@ -86,44 +88,28 @@ class NavigationRouter extends Component {
 
 export default NavigationRouter;
 
-const Footer = styled.footer`
-  position: fixed;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  color: #ffffff;
-  height: auto;
-  font-size: 0.8rem;
-  text-align: center;
-  padding: 0.5rem;
-  & a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-`;
-
+//INLINE STYLING
 const Header = styled.nav`
-  height: 3.5rem;
+  background-color: transparent;
+  height: auto;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9;
+  z-index: 100;
   transition-timing-function: ease-in;
   transition: all 1s;
 `;
 
 const NavUl = styled.ul`
   font-size: 15px;
-  padding: 5px;
-  margin-left: 1rem;
-  margin-top: 0.3rem;
-  display: inline-flex;
-  flex-direction: row;
+  padding: 0;
+  display: flex;
   color: #ffffff;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   height: auto;
+  margin: 0.5rem;
   width: 45vw;
   @media only screen and (max-width: 60em) {
     margin-left: 0;
@@ -157,5 +143,25 @@ const Tab = styled.li`
       display: block;
       margin: 5px;
     }
+  }
+`;
+
+const Search = styled.img`
+  width: 1rem;
+  float: right;
+`;
+const Footer = styled.footer`
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  color: #ffffff;
+  height: auto;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.5rem;
+  & a {
+    color: #ffffff;
+    text-decoration: none;
   }
 `;

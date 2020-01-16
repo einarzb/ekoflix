@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from "redux-logger";
-import movieReducer from "../redux/reducers/movieReducer";
+import heroReducer from "../redux/reducers/heroReducer";
 
-const reducers = combineReducers({ movieReducer });
+const reducers = combineReducers({ heroReducer });
 
 export default createStore(reducers, applyMiddleware(logger));
