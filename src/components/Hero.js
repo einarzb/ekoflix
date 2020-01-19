@@ -1,18 +1,34 @@
 import React from "react";
 import styled from "styled-components";
+import { EkoGradient } from "../assets/theme";
+import { PLUS } from "../assets/svgIndex";
 
 const Hero = ({ heroItem }) => {
   console.log(heroItem);
   let HeroCard = heroItem.map(function(item, i) {
     return (
-      <Card key={i} style={{ backgroundImage: `url(${item.coverBg})` }}>
+      <Card key={i}>
+        <HeroWrap>
+          <img src={item.coverBg} />
+        </HeroWrap>
+        <Gradient></Gradient>
         <Data>
           <h1>{item.title}</h1>
           <Description>{item.description}</Description>
-          <MetaTags>{item.meta}</MetaTags>
+          <MetaTags>um</MetaTags>
         </Data>
-
-        <DataRow></DataRow>
+        <CtaWrap>
+          <a tabIndex="0" role="link" href="/">
+            play
+          </a>
+          <a tabIndex="0" role="link" href="/">
+            add to my list{" "}
+            <img src={PLUS} width="10" style={{ marginLeft: "10px" }} />
+          </a>
+          <a tabIndex="0" role="link" href="/">
+            more info
+          </a>
+        </CtaWrap>
       </Card>
     );
   });
@@ -22,13 +38,40 @@ const Hero = ({ heroItem }) => {
 
 export default Hero;
 
-const Card = styled.div`
+const HeroWrapper = styled.div`
   position: absolute;
-  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
   right: 0;
-  top: 3.5rem;
+`;
+const HeroWrap = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
   left: 0;
   bottom: 0;
+  z-index: 2;
+  & img {
+    position: absolute;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 400ms cubic-bezier(0.665, 0.235, 0.265, 0.8) 0s;
+    z-index: 5;
+  }
+`;
+const Card = styled.div`
+  /*
+  display: inline-flex;
+
   background-size: cover;
   background-position: center center;
   -webkit-background-size: cover;
@@ -39,14 +82,9 @@ const Card = styled.div`
   -o-transition: opacity 400ms cubic-bezier(0.665, 0.235, 0.265, 0.8) 0s;
   -moz-transition: opacity 400ms cubic-bezier(0.665, 0.235, 0.265, 0.8) 0s;
   transition: opacity 400ms cubic-bezier(0.665, 0.235, 0.265, 0.8) 0s;
+  */
 `;
-
-const Data = styled.div`
-  display: block;
-  color: #ffffff;
-  padding: 2rem;
-  font-size: 1rem;
-  width: 44vw;
+const Gradient = styled.div`
   background: -webkit-linear-gradient(
     -13deg,
     rgba(0, 0, 0, 0.8) 0%,
@@ -74,33 +112,50 @@ const Data = styled.div`
   -o-transition: opacity 500ms;
   -moz-transition: opacity 500ms;
   transition: opacity 500ms;
-  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
+  z-index: 0;
+`;
+
+const Data = styled.div`
+  position: absolute;
+  top: 10%;
+  left: 4%;
+  bottom: 0%;
+  z-index: 10;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  width: 36%;
+  @media only screen and (max-width: 60em) {
     width: 100%;
+    top: 2%
     padding: 2rem 0;
   }
-`;
-
-const HeroWrapper = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  justify-content: end;
-  margin-top: 1rem;
-  padding: 0rem;
-`;
-
-const DataRow = styled.div`
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 0.3rem;
-  padding: 8px;
-  align-items: center;
-  width: 100px;
 `;
 
 const Description = styled.p`
   line-height: 1.5;
 `;
 const MetaTags = styled.span``;
+
+const CtaWrap = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 0rem 0rem;
+  z-index: 10;
+  & a {
+    position: relative;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgba(51, 51, 51, 0.4);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    &:hover {
+      background: ${EkoGradient};
+    }
+  }
+`;

@@ -110,7 +110,7 @@ const NavUl = styled.ul`
   align-items: center;
   height: auto;
   margin: 0.5rem;
-  width: 45vw;
+  width: auto;
   @media only screen and (max-width: 60em) {
     margin-left: 0;
     & img {
