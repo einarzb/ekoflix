@@ -1,4 +1,5 @@
 import { FETCH_HERO } from "../actions/index";
+
 let heroItem = [
   {
     coverBg:

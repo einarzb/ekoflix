@@ -48,6 +48,7 @@ const HeroWrapper = styled.div`
   left: 0;
   right: 0;
 `;
+
 const HeroWrap = styled.div`
   position: absolute;
   top: 0;
@@ -76,21 +77,8 @@ const Card = styled.div`
   display: inline-flex;
   flex-direction: column;
   z-index: 5;
-
-  /*
-
-  background-size: cover;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  filter: alpha(opacity=100);
-  -webkit-transition: opacity 400ms cubic-bezier(0.665, 0.235, 0.265, 0.8) 0s;
-  -o-transition: opacity 400ms cubic-bezier(0.665, 0.235, 0.265, 0.8) 0s;
-  -moz-transition: opacity 400ms cubic-bezier(0.665, 0.235, 0.265, 0.8) 0s;
-  transition: opacity 400ms cubic-bezier(0.665, 0.235, 0.265, 0.8) 0s;
-  */
 `;
+
 const Gradient = styled.div`
   background: -webkit-linear-gradient(
     -13deg,
@@ -120,6 +108,7 @@ const Gradient = styled.div`
   -moz-transition: opacity 500ms;
   transition: opacity 500ms;
   z-index: 2;
+  height: 14.7vw;
 `;
 
 const Data = styled.div`
