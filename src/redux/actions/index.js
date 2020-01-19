@@ -5,3 +5,11 @@ export const heroItemAction = data => ({
     data
   }
 });
+
+export const FETCH_MOVIES = "FETCH_MOVIES";
+export const playlistAction = data => ({
+  type: FETCH_MOVIES,
+  data: {
+    data
+  }
+});

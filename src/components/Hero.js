@@ -47,6 +47,8 @@ const HeroWrapper = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 7;
+  border: 3px solid blue;
 `;
 
 const HeroWrap = styled.div`
@@ -108,7 +110,7 @@ const Gradient = styled.div`
   -moz-transition: opacity 500ms;
   transition: opacity 500ms;
   z-index: 2;
-  height: 14.7vw;
+  height: auto;
 `;
 
 const Data = styled.div`
