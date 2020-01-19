@@ -4,7 +4,6 @@ import { EkoGradient } from "../assets/theme";
 import { PLUS } from "../assets/svgIndex";
 
 const Hero = ({ heroItem }) => {
-  console.log(heroItem);
   let HeroCard = heroItem.map(function(item, i) {
     return (
       <Card key={i}>
@@ -15,7 +14,11 @@ const Hero = ({ heroItem }) => {
         <Data>
           <h1>{item.title}</h1>
           <Description>{item.description}</Description>
-          <MetaTags>um</MetaTags>
+          <MetaTags>
+            {item.meta.map((metaTag, i) => (
+              <MetaTag key={i}>{metaTag}</MetaTag>
+            ))}
+          </MetaTags>
         </Data>
         <CtaWrap>
           <a tabIndex="0" role="link" href="/">
@@ -68,9 +71,13 @@ const HeroWrap = styled.div`
     z-index: 5;
   }
 `;
+
 const Card = styled.div`
-  /*
   display: inline-flex;
+  flex-direction: column;
+  z-index: 5;
+
+  /*
 
   background-size: cover;
   background-position: center center;
@@ -112,7 +119,7 @@ const Gradient = styled.div`
   -o-transition: opacity 500ms;
   -moz-transition: opacity 500ms;
   transition: opacity 500ms;
-  z-index: 0;
+  z-index: 2;
 `;
 
 const Data = styled.div`
@@ -125,6 +132,9 @@ const Data = styled.div`
   justify-content: start;
   flex-direction: column;
   width: 36%;
+  & p {
+    margin: 0.5rem 0;
+  }
   @media only screen and (max-width: 60em) {
     width: 100%;
     top: 2%
@@ -135,15 +145,38 @@ const Data = styled.div`
 const Description = styled.p`
   line-height: 1.5;
 `;
-const MetaTags = styled.span``;
+const MetaTags = styled.div`
+  display: inline-flex;
+  flex-direction: row;
+  font-size: 1rem;
+  justify-content: space-between;
+  width: inherit;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0 1rem;
+`;
+
+const MetaTag = styled.div`
+  display: inline-flex;
+  &:after {
+    content: "|";
+    padding-left: 0.5rem;
+  }
+  &:last-child:after {
+    content: "";
+  }
+  &: hover;
+`;
 
 const CtaWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
-  margin: 0rem 0rem;
   z-index: 10;
+  width: auto;
+  position: absolute;
+  bottom: 50%;
+  left: 4%;
   & a {
     position: relative;
     color: #fff;
@@ -154,8 +187,11 @@ const CtaWrap = styled.div`
     text-decoration: none;
     font-size: 1rem;
     padding: 0.5rem 2rem;
+    margin: 0 0.3rem;
+    transition: all 0.2s ease-in-out;
     &:hover {
       background: ${EkoGradient};
+      transform: scale(1.1);
     }
   }
 `;
