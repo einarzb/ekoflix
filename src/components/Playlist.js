@@ -2,12 +2,11 @@ import React, { Fragment } from "react";
 import styled from "styled-components";
 
 const Playlist = ({ playlist }) => {
-  let PlaylistRow = playlist.list.map(function(movie, i) {
+  let playlistItems = playlist.list.map(function(movie, i) {
     return (
       <Fragment>
         <Card key={i}>
           <Box src={movie.coverBg} />
-          <Gradient></Gradient>
           <Data>
             <h1>{movie.title}</h1>
             <Description>{movie.description}</Description>
@@ -25,8 +24,8 @@ const Playlist = ({ playlist }) => {
   return (
     <PlaylistWrapper>
       {" "}
-      <h2>{playlist.playlistType} </h2>
-      {PlaylistRow}
+      <h2>{playlist.type} </h2>
+      <PlaylistRow>{playlistItems}</PlaylistRow>
     </PlaylistWrapper>
   );
 };
@@ -34,51 +33,31 @@ const Playlist = ({ playlist }) => {
 export default Playlist;
 
 const PlaylistWrapper = styled.div`
-  margin: 8vw 0;
-  border: 3px solid red;
   z-index: 999;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border: 1px solid blue;
+  & h2 {
+    margin-left: 2rem;
+  }
+`;
+const PlaylistRow = styled.div`
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 `;
 
 const Card = styled.div`
   display: inline-flex;
-  flex-direction: row;
+  flex-direction: column;
   z-index: 5;
+  border: 2px solid red;
 `;
 
 const Box = styled.img`
   width: 200px;
-`;
-
-const Gradient = styled.div`
-  background: -webkit-linear-gradient(
-    -13deg,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  background: -moz-
-    oldlinear-gradient(-13deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 85%);
-  background: -o-linear-gradient(
-    -13deg,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  background: linear-gradient(
-    85deg,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  position: absolute;
-  top: 0;
-  right: 26.09%;
-  left: 0;
-  bottom: 0;
-  opacity: 1;
-  -webkit-transition: opacity 500ms;
-  -o-transition: opacity 500ms;
-  -moz-transition: opacity 500ms;
-  transition: opacity 500ms;
-  z-index: 2;
-  height: auto;
 `;
 
 const Data = styled.div`
@@ -91,10 +70,11 @@ const Data = styled.div`
   justify-content: start;
   flex-direction: column;
   width: 36%;
+
   & p {
     margin: 0.5rem 0;
   }
-  @media only screen and (max-width: 60em) {
+  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
     width: 100%;
     top: 2%
     padding: 2rem 0;

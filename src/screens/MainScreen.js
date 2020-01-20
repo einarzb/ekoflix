@@ -13,13 +13,12 @@ class MainScreen extends React.Component {
   };
   render() {
     let { heroItem, playlist } = this.props;
-    console.log(heroItem);
-    console.log(playlist);
-
     return (
       <Fragment>
         <Wrapper>
           <Hero heroItem={heroItem}></Hero>
+          {/**TODO: create a component that accepts playlists  
+          <PlayList playlist={playlist}></PlayList>*/}
           <PlayList playlist={playlist}></PlayList>
         </Wrapper>
       </Fragment>

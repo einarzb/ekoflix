@@ -111,10 +111,11 @@ const NavUl = styled.ul`
   height: auto;
   margin: 0.5rem;
   width: auto;
-  @media only screen and (max-width: 60em) {
+  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
     margin-left: 0;
     & img {
       display: block;
+      margin-left: 0.5rem;
     }
   }
 `;
@@ -137,7 +138,7 @@ const Tab = styled.li`
       color: #ffffff;
     }
   }
-  @media only screen and (max-width: 60em) {
+  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
     display: none;
     &:first-child {
       display: block;

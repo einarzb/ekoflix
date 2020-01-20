@@ -10,10 +10,11 @@ export const DarkBlue = "#00112b";
 
 export const Wrapper = styled.div`
   background-color: ${DarkBlue};
-  display: block;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   position: relative;
+  display: inline-flex;
+  flex-direction: column;
   overflow-y: auto;
   padding-top: 3.5rem;
   padding-left: 0;

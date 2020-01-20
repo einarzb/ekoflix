@@ -19,19 +19,19 @@ const Hero = ({ heroItem }) => {
               <MetaTag key={i}>{metaTag}</MetaTag>
             ))}
           </MetaTags>
+          <CtaWrap>
+            <a tabIndex="0" role="link" href="/">
+              play
+            </a>
+            <a tabIndex="0" role="link" href="/">
+              add to my list{" "}
+              <img src={PLUS} width="10" style={{ marginLeft: "10px" }} />
+            </a>
+            <a tabIndex="0" role="link" href="/">
+              more info
+            </a>
+          </CtaWrap>
         </Data>
-        <CtaWrap>
-          <a tabIndex="0" role="link" href="/">
-            play
-          </a>
-          <a tabIndex="0" role="link" href="/">
-            add to my list{" "}
-            <img src={PLUS} width="10" style={{ marginLeft: "10px" }} />
-          </a>
-          <a tabIndex="0" role="link" href="/">
-            more info
-          </a>
-        </CtaWrap>
       </Card>
     );
   });
@@ -42,13 +42,14 @@ const Hero = ({ heroItem }) => {
 export default Hero;
 
 const HeroWrapper = styled.div`
-  position: absolute;
+  position: relative;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 7;
-  border: 3px solid blue;
+  height: 70vh;
+  display: block;
 `;
 
 const HeroWrap = styled.div`
@@ -72,6 +73,9 @@ const HeroWrap = styled.div`
     opacity: 1;
     transition: opacity 400ms cubic-bezier(0.665, 0.235, 0.265, 0.8) 0s;
     z-index: 5;
+    @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
+      min-height: 289px;
+    }
   }
 `;
 
@@ -79,6 +83,7 @@ const Card = styled.div`
   display: inline-flex;
   flex-direction: column;
   z-index: 5;
+  height: auto;
 `;
 
 const Gradient = styled.div`
@@ -110,7 +115,11 @@ const Gradient = styled.div`
   -moz-transition: opacity 500ms;
   transition: opacity 500ms;
   z-index: 2;
-  height: auto;
+  height: 100vh;
+  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
+    height: 40%;
+    right: 0;
+  }
 `;
 
 const Data = styled.div`
@@ -122,11 +131,12 @@ const Data = styled.div`
   display: flex;
   justify-content: start;
   flex-direction: column;
-  width: 36%;
+  width: 50%;
+   height: 100%;
   & p {
     margin: 0.5rem 0;
   }
-  @media only screen and (max-width: 60em) {
+  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
     width: 100%;
     top: 2%
     padding: 2rem 0;
@@ -139,23 +149,23 @@ const Description = styled.p`
 const MetaTags = styled.div`
   display: inline-flex;
   flex-direction: row;
+  align-items: center;
   font-size: 1rem;
   justify-content: space-between;
   width: inherit;
   background-color: rgba(0, 0, 0, 0.3);
-  padding: 0 1rem;
+  padding: 0 0.5rem;
+  width: fit-content;
 `;
 
 const MetaTag = styled.div`
-  display: inline-flex;
   &:after {
-    content: "|";
-    padding-left: 0.5rem;
+    content: " | ";
+    padding: 0 0.5rem;
   }
   &:last-child:after {
     content: "";
   }
-  &: hover;
 `;
 
 const CtaWrap = styled.div`
@@ -166,8 +176,11 @@ const CtaWrap = styled.div`
   z-index: 10;
   width: auto;
   position: absolute;
-  bottom: 50%;
-  left: 4%;
+  top: 45%;
+  left: 0%;
+  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
+    bottom: 67%;
+  }
   & a {
     position: relative;
     color: #fff;
@@ -177,12 +190,18 @@ const CtaWrap = styled.div`
     background-color: rgba(51, 51, 51, 0.4);
     text-decoration: none;
     font-size: 1rem;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem;
     margin: 0 0.3rem;
     transition: all 0.2s ease-in-out;
     &:hover {
       background: ${EkoGradient};
       transform: scale(1.1);
+    }
+    @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
+      padding: 0 0.3rem;
+      font-size: 0.75rem;
+      line-height: 2;
+      height: auto;
     }
   }
 `;

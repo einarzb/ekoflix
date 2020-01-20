@@ -1,61 +1,61 @@
 import { FETCH_MOVIES } from "../actions/index";
 
 let playlist = {
-  playlistType: "Popular",
+  type: "Popular",
   list: [
     {
       id: 1,
       coverBg:
-        "https://occ-0-1391-2773.1.nflxso.net/dnm/api/v6/0DW6CdE4gYtYx8iy3aj8gs9WtXE/AAAABSvcTRpSlA-K3T6FVPyUtpsvu9-ezaPegtaHB1_0CWyIoWo2yrq6W5yOwyqlmB8VTFb2qc4YzPUPs2DLot3dqVkOU_qf_J9GsXE6f4lpiS2cUsRKi2mBV6CiOzag.jpg?r=e9f",
-      title: "The Two Popes",
+        "https://res.cloudinary.com/dlkxfitke/image/upload/w_445,f_auto,q_auto/fl_lossy/falcon_storage/production/playlists/wizard/WSD_5-191120225055.jpg",
+      title: "Wizard School Dropout",
       description:
-        "Behind Vatican walls, the conservative Pope Benedict and the liberal future Pope Francis must find common ground to forge a new path for the Catholic Church",
-      meta: ["drama", "comedy", "2019"]
+        "After defying her parents and becoming a wizard school dropout, Andy has to figure out how to make it on her own in decidedly non-magical Los Angeles.",
+      meta: ["comedy", "13 Episodes", "2019"]
     },
     {
       id: 2,
       coverBg:
-        "https://occ-0-1391-2773.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABRuu2QOtQGv8IXf7F8rgzQ7A4SOQEW6QhirIKE37AmGcB9LnIwUZ_yAZyGKcDauNyOtnfFaSBxEA-lSX0ksQjbjtwaEdueDSvpy_buxKj78OEFal2ZQA1DUsWtqz.webp?r=e9f",
-      title: "The Two Popes",
+        "https://res.cloudinary.com/dlkxfitke/image/upload/w_445,f_auto,q_auto/fl_lossy/falcon_storage/production/playlists/EpicNight/horiz-epic-night-191115192138.jpg",
+      title: "Epic Night",
       description:
-        "Behind Vatican walls, the conservative Pope Benedict and the liberal future Pope Francis must find common ground to forge a new path for the Catholic Church",
-      meta: ["drama", "comedy", "2019"]
+        "After graduation day, three friends are facing going their separate ways and wants to make the last night of college count.",
+      meta: ["comedy", "4 Episodes", "2019"]
     },
     {
       id: 3,
       coverBg:
-        "https://occ-0-1391-2773.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABRuu2QOtQGv8IXf7F8rgzQ7A4SOQEW6QhirIKE37AmGcB9LnIwUZ_yAZyGKcDauNyOtnfFaSBxEA-lSX0ksQjbjtwaEdueDSvpy_buxKj78OEFal2ZQA1DUsWtqz.webp?r=e9f",
-      title: "The Two Popes",
+        "https://res.cloudinary.com/dlkxfitke/image/upload/w_445,f_auto,q_auto/fl_lossy/falcon_storage/production/playlists/5spbsps/horiz-timeline-191115192659.jpg",
+      title: "Timeline",
       description:
-        "Behind Vatican walls, the conservative Pope Benedict and the liberal future Pope Francis must find common ground to forge a new path for the Catholic Church",
-      meta: ["drama", "comedy", "2019"]
+        "When Dee’s phone mysteriously gains the ability to see the future, she might just have a chance of going from a zero to a major hero at her high school.",
+      meta: ["drama", "8 Episodes", "2019"]
     },
     {
       id: 4,
       coverBg:
-        "https://occ-0-1391-2773.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABRuu2QOtQGv8IXf7F8rgzQ7A4SOQEW6QhirIKE37AmGcB9LnIwUZ_yAZyGKcDauNyOtnfFaSBxEA-lSX0ksQjbjtwaEdueDSvpy_buxKj78OEFal2ZQA1DUsWtqz.webp?r=e9f",
-      title: "The Two Popes",
+        "https://res.cloudinary.com/dlkxfitke/image/upload/w_445,f_auto,q_auto/fl_lossy/falcon_storage/production/playlists/TheCoop/TheCoop_1-191120225227.jpg",
+      title: "The Coop",
       description:
-        "Behind Vatican walls, the conservative Pope Benedict and the liberal future Pope Francis must find common ground to forge a new path for the Catholic Church",
-      meta: ["drama", "comedy", "2019"]
+        "Welcome to Season 39 of the most interactive reality show ever: The Coop! But be warned, there’s a murderer in our midst, and they are bringing a real toxic energy into the house, especially after they offed token house-hunk, Ryan.",
+      meta: ["drama", "15 Episodes", "2019"]
     },
     {
       id: 5,
       coverBg:
-        "https://occ-0-1391-2773.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABRuu2QOtQGv8IXf7F8rgzQ7A4SOQEW6QhirIKE37AmGcB9LnIwUZ_yAZyGKcDauNyOtnfFaSBxEA-lSX0ksQjbjtwaEdueDSvpy_buxKj78OEFal2ZQA1DUsWtqz.webp?r=e9f",
-      title: "The Two Popes",
+        "https://res.cloudinary.com/dlkxfitke/image/upload/w_445,f_auto,q_auto/fl_lossy/falcon_storage/production/playlists/TMW/horiz-tmw-191115193321.jpg",
+      title: "That Moment When",
       description:
-        "Behind Vatican walls, the conservative Pope Benedict and the liberal future Pope Francis must find common ground to forge a new path for the Catholic Church",
-      meta: ["drama", "comedy", "2019"]
+        "Jill is a hot mess. It's up to YOU to navigate through a series of awkward moments that either leave her somewhat dignified or even hot-messier. Starring Milana Vayntrub, and created by Sandeep Parikh.",
+      meta: ["drama", "7 Episodes", "2019"]
     },
     {
       id: 6,
       coverBg:
-        "https://occ-0-1391-2773.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABRuu2QOtQGv8IXf7F8rgzQ7A4SOQEW6QhirIKE37AmGcB9LnIwUZ_yAZyGKcDauNyOtnfFaSBxEA-lSX0ksQjbjtwaEdueDSvpy_buxKj78OEFal2ZQA1DUsWtqz.webp?r=e9f",
-      title: "The Two Popes",
+        "https://res.cloudinary.com/dlkxfitke/image/upload/w_445,f_auto,q_auto/fl_lossy/falcon_storage/production/playlists/charlie/horiz-charlie-191115191513.jpg",
+      title: "Charlie Gets Fired",
       description:
-        "Behind Vatican walls, the conservative Pope Benedict and the liberal future Pope Francis must find common ground to forge a new path for the Catholic Church",
-      meta: ["drama", "comedy", "2019"]
+        "Charlie is a young lad trying to hold on to a job. But he suffers from user-interactivitis, a rare brain disease which means you get to choose his words for him. And you know what that means: Charlie gets fired. Have fun ruining his life!",
+      meta: ["drama", "8 Episodes", "2019"]
     }
   ]
 };
