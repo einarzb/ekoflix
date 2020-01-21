@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { EkoGradient } from "../assets/theme";
+import { EkoGradient, EkoPink } from "../assets/theme";
 import { PLUS } from "../assets/svgIndex";
 
 const Hero = ({ heroItem }) => {
@@ -115,11 +115,7 @@ const Gradient = styled.div`
   -moz-transition: opacity 500ms;
   transition: opacity 500ms;
   z-index: 2;
-  height: 100vh;
-  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
-    height: 40%;
-    right: 0;
-  }
+  height: 106vh;
 `;
 
 const Data = styled.div`
@@ -134,8 +130,17 @@ const Data = styled.div`
   width: 50%;
    height: 100%;
   & p {
-    margin: 0.5rem 0;
+    margin: 0;
   }
+  & h1:after {
+    content: "";
+    background: ${EkoPink};
+    height: 10%;
+    width: 120px;
+    display:block;
+    margin: 1rem 0 0 0;
+  }
+}
   @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
     width: 100%;
     top: 2%
@@ -156,6 +161,7 @@ const MetaTags = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
   padding: 0 0.5rem;
   width: fit-content;
+  margin: 1rem 0;
 `;
 
 const MetaTag = styled.div`
@@ -176,7 +182,7 @@ const CtaWrap = styled.div`
   z-index: 10;
   width: auto;
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 0%;
   @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
     bottom: 67%;

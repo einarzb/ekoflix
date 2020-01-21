@@ -17,8 +17,8 @@ class MainScreen extends React.Component {
       <Fragment>
         <Wrapper>
           <Hero heroItem={heroItem}></Hero>
-          {/**TODO: create a component that accepts playlists  
-          <PlayList playlist={playlist}></PlayList>*/}
+          {/**TODO: create a component that accepts playlists  */}
+          <PlayList playlist={playlist}></PlayList>
           <PlayList playlist={playlist}></PlayList>
         </Wrapper>
       </Fragment>

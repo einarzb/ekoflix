@@ -4,7 +4,7 @@ import { asyncComponent } from "react-async-component";
 
 //STYLING
 import styled from "styled-components";
-import { EkoGradient, BlackShadow } from "../assets/theme";
+import { EkoGradient, BlackShadow, EkoPink } from "../assets/theme";
 import { EKO, PLUS, SEARCH } from "../assets/svgIndex";
 
 //LAZY COMPONENTS
@@ -135,7 +135,7 @@ const Tab = styled.li`
     color: #ffffff;
     text-decoration: none;
     &:hover {
-      color: #ffffff;
+      color: ${EkoPink};
     }
   }
   @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
@@ -152,6 +152,7 @@ const Search = styled.img`
   float: right;
 `;
 const Footer = styled.footer`
+  background: rgba(0, 0, 0, 0.8);
   position: fixed;
   width: 100%;
   left: 0;
@@ -161,6 +162,7 @@ const Footer = styled.footer`
   font-size: 0.8rem;
   text-align: center;
   padding: 0.5rem;
+  z-index: 999;
   & a {
     color: #ffffff;
     text-decoration: none;
