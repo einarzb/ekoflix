@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 import { BlackShadow, EkoPink, DarkBlue } from "../assets/theme";
 import { PLAY } from "../assets/svgIndex";
 
