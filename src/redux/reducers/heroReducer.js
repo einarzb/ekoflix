@@ -3,11 +3,11 @@ import { FETCH_HERO } from "../actions/index";
 let heroItem = [
   {
     coverBg:
-      "https://occ-0-1391-2773.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABRuu2QOtQGv8IXf7F8rgzQ7A4SOQEW6QhirIKE37AmGcB9LnIwUZ_yAZyGKcDauNyOtnfFaSBxEA-lSX0ksQjbjtwaEdueDSvpy_buxKj78OEFal2ZQA1DUsWtqz.webp?r=e9f",
-    title: "The Two Popes",
+      "https://res.cloudinary.com/dlkxfitke/image/upload/w_1920,f_auto,q_auto/fl_lossy/falcon_storage/production/playlists/save-the-dates/horiz-std-191115220019.jpg",
+    title: "Save The Dates",
     description:
-      "Behind Vatican walls, the conservative Pope Benedict and the liberal future Pope Francis must find common ground to forge a new path for the Catholic Church",
-    meta: ["drama", "comedy", "2019"]
+      "An interactive comedy about the love life of Chelsea, who turns a blind date into four parallel-reality courtships. Throughout the series, try dating each guy and perhaps realize, once and for all, that the grass is never greener.",
+    meta: ["comedy", "3 Episodes", "2019"]
   }
 ];
 

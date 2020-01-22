@@ -50,6 +50,9 @@ const HeroWrapper = styled.div`
   z-index: 7;
   height: 70vh;
   display: block;
+  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
+    height: 43vh;
+  }
 `;
 
 const HeroWrap = styled.div`
@@ -74,7 +77,7 @@ const HeroWrap = styled.div`
     transition: opacity 400ms cubic-bezier(0.665, 0.235, 0.265, 0.8) 0s;
     z-index: 5;
     @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
-      min-height: 289px;
+      min-height: 286px;
     }
   }
 `;
@@ -131,20 +134,30 @@ const Data = styled.div`
    height: 100%;
   & p {
     margin: 0;
+
   }
   & h1:after {
     content: "";
     background: ${EkoPink};
-    height: 10%;
+    height: 6px;
     width: 120px;
     display:block;
     margin: 1rem 0 0 0;
+    position:absolute;
   }
 }
   @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
     width: 100%;
-    top: 2%
-    padding: 2rem 0;
+    top: 13%;
+    & p {
+      white-space: normal;
+      width: 91%;
+      font-size: 0.9rem;
+    }
+    & h1:after { 
+      height: 5px;
+      margin: 0.6rem 0 0 0;
+    }
   }
 `;
 
@@ -182,10 +195,10 @@ const CtaWrap = styled.div`
   z-index: 10;
   width: auto;
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 0%;
   @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
-    bottom: 67%;
+    top: 75%;
   }
   & a {
     position: relative;

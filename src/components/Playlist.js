@@ -45,7 +45,7 @@ const PlaylistWrapper = styled.div`
   z-index: 10;
   background: ${BlackShadow};
   height: 100%;
-  width: 99%;
+  width: 100%;
   overflow-y: scroll;
   & h2 {
     color: ${EkoPink};
@@ -54,6 +54,11 @@ const PlaylistWrapper = styled.div`
   }
   &:last-child {
     margin-bottom: 5rem;
+  }
+  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
+    &:last-child {
+      margin-bottom: 3rem;
+    }
   }
 `;
 
@@ -90,7 +95,10 @@ const Data = styled.div`
     display:inline-flex;
     width: 100%;
     top: 2%
-    padding: 2rem 0;
+    padding: 0 0;
+    & p {
+      font-size: 0.9rem;
+    }
   }
 `;
 
@@ -101,6 +109,10 @@ const Play = styled.img`
   opacity: 0.7;
   top: 22%;
   left: 43%;
+  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
+    display: block;
+    top: 18%;
+  }
 `;
 
 const Card = styled.div`
@@ -130,11 +142,24 @@ const Card = styled.div`
       display: block;
     }
   }
+  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
+    width: 80%;
+    & h1 {
+      margin: 0.5rem;
+      font-size: 1.1rem;
+    }
+    &:hover {
+      transform: scale(1);
+    }
+  }
 `;
 
 const Box = styled.img`
   width: 350px;
   background-size: cover;
+  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
+    width: 100%;
+  }
 `;
 
 const Description = styled.p`
@@ -148,6 +173,9 @@ const MetaTags = styled.div`
   width: 90%;
   background-color: rgba(0, 0, 0, 0.3);
   padding: 0 0.5rem;
+  @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
+    font-size: 0.9rem;
+  }
 `;
 
 const MetaTag = styled.div`

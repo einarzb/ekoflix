@@ -19,7 +19,7 @@ const PlaylistWrapper = styled.div`
   z-index: 10;
   background: ${BlackShadow};
   height: 100%;
-  width: 99%;
+  width: 100%;
   overflow-y: scroll;
   & h2 {
     color: ${EkoPink};
