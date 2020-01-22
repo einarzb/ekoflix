@@ -1,24 +1,22 @@
-import React, { Fragment } from "react";
+import React from "react";
 import styled from "styled-components";
 import { BlackShadow, EkoPink, DarkBlue } from "../assets/theme";
 
 const Playlist = ({ playlist }) => {
   let playlistItems = playlist.list.map(function(movie, i) {
     return (
-      <Fragment>
-        <Card key={i}>
-          <Box src={movie.coverBg} />
-          <h1>{movie.title}</h1>
-          <Data>
-            <MetaTags>
-              {movie.meta.map((metaTag, i) => (
-                <MetaTag key={i}>{metaTag}</MetaTag>
-              ))}
-            </MetaTags>
-            <Description>{movie.description}</Description>
-          </Data>
-        </Card>
-      </Fragment>
+      <Card key={i}>
+        <Box src={movie.coverBg} />
+        <h1>{movie.title}</h1>
+        <Data>
+          <MetaTags>
+            {movie.meta.map((metaTag, i) => (
+              <MetaTag key={i}>{metaTag}</MetaTag>
+            ))}
+          </MetaTags>
+          <Description>{movie.description}</Description>
+        </Data>
+      </Card>
     );
   });
 
@@ -48,6 +46,9 @@ const PlaylistWrapper = styled.div`
     color: ${EkoPink};
     font-size: 1.2rem;
     margin-left: 2rem;
+  }
+  &:last-child {
+    margin-bottom: 5rem;
   }
 `;
 
