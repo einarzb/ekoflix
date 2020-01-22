@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import { BlackShadow, EkoPink, DarkBlue } from "../assets/theme";
+import { PLAY } from "../assets/svgIndex";
 
 const Playlist = ({ playlist }) => {
   let playlistItems = playlist.list.map(function(movie, i) {
     return (
       <Card key={i}>
-        <Box src={movie.coverBg} />
+        <a href={movie.videoLink}>
+          <Box src={movie.coverBg} />
+          <Play src={PLAY} />
+        </a>
         <h1>{movie.title}</h1>
         <Data>
           <MetaTags>
@@ -89,6 +93,15 @@ const Data = styled.div`
   }
 `;
 
+const Play = styled.img`
+  display: none;
+  position: absolute;
+  width: 46px;
+  opacity: 0.7;
+  top: 22%;
+  left: 43%;
+`;
+
 const Card = styled.div`
   cursor: pointer;
   position: relative;
@@ -106,11 +119,14 @@ const Card = styled.div`
     font-size: 1.5rem;
   }
   &:hover {
-    transform: scale(1.125);
+    transform: scale(1.1);
     z-index: 99;
     height: 400px;
     ${Data} {
       display: inline-flex;
+    }
+    ${Play} {
+      display: block;
     }
   }
 `;

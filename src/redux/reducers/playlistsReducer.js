@@ -11,7 +11,8 @@ let playlists = [
         title: "Wizard School Dropout",
         description:
           "After defying her parents and becoming a wizard school dropout, Andy has to figure out how to make it on her own in decidedly non-magical Los Angeles.",
-        meta: ["comedy", "13 Episodes", "2019"]
+        meta: ["comedy", "13 Episodes", "2019"],
+        videoLink: "https://eko.com/wsd/the-eviction?autoplay=true"
       },
       {
         id: 2,
@@ -20,7 +21,8 @@ let playlists = [
         title: "Epic Night",
         description:
           "After graduation day, three friends are facing going their separate ways and wants to make the last night of college count.",
-        meta: ["comedy", "4 Episodes", "2019"]
+        meta: ["comedy", "4 Episodes", "2019"],
+        videoLink: "https://eko.com/epicnight/epic-night-part-1?autoplay=true"
       },
       {
         id: 3,
@@ -29,7 +31,8 @@ let playlists = [
         title: "Timeline",
         description:
           "When Dee’s phone mysteriously gains the ability to see the future, she might just have a chance of going from a zero to a major hero at her high school.",
-        meta: ["drama", "8 Episodes", "2019"]
+        meta: ["drama", "8 Episodes", "2019"],
+        videoLink: "https://eko.com/timeline/what-the-future?autoplay=true"
       },
       {
         id: 4,
@@ -38,7 +41,8 @@ let playlists = [
         title: "The Coop",
         description:
           "Welcome to Season 39 of the most interactive reality show ever: The Coop! But be warned, there’s a murderer in our midst, and they are bringing a real toxic energy into the house, especially after they offed token house-hunk, Ryan.",
-        meta: ["drama", "15 Episodes", "2019"]
+        meta: ["drama", "15 Episodes", "2019"],
+        videoLink: "https://eko.com/the-coop/who-killed-ryan?autoplay=true"
       },
       {
         id: 5,
@@ -47,7 +51,8 @@ let playlists = [
         title: "That Moment When",
         description:
           "Jill is a hot mess. It's up to YOU to navigate through a series of awkward moments that either leave her somewhat dignified or even hot-messier. Starring Milana Vayntrub, and created by Sandeep Parikh.",
-        meta: ["drama", "7 Episodes", "2019"]
+        meta: ["drama", "7 Episodes", "2019"],
+        videoLink: "https://eko.com/tmw/101?autoplay=true"
       },
       {
         id: 6,
@@ -98,7 +103,8 @@ let playlists = [
         title: "That Moment When",
         description:
           "Jill is a hot mess. It's up to YOU to navigate through a series of awkward moments that either leave her somewhat dignified or even hot-messier. Starring Milana Vayntrub, and created by Sandeep Parikh.",
-        meta: ["drama", "7 Episodes", "2019"]
+        meta: ["drama", "7 Episodes", "2019"],
+        videoLink: "https://eko.com/tmw/101?autoplay=true"
       },
       {
         id: 6,
@@ -121,7 +127,9 @@ let playlists = [
         title: "#Wargames",
         description:
           "Join Kelly and her band of misfit hackers as they transform from pranksters to leaders of the international movement #WarGames and take on the powers that be.",
-        meta: ["drama", "6 Episodes", "2020"]
+        meta: ["drama", "6 Episodes", "2020"],
+        videoLink:
+          "https://eko.com/wargames/episode-one-chasing-bryce?autoplay=true"
       },
       {
         id: 2,
@@ -130,7 +138,8 @@ let playlists = [
         title: "Epic Night",
         description:
           "After graduation day, three friends are facing going their separate ways and wants to make the last night of college count.",
-        meta: ["drama", "4 Episodes", "2019"]
+        meta: ["drama", "4 Episodes", "2019"],
+        videoLink: "https://eko.com/epicnight/epic-night-part-1?autoplay=true"
       },
       {
         id: 3,
@@ -139,7 +148,8 @@ let playlists = [
         title: "Possibilia",
         description:
           "What if you could influence someone else's breakup? From acclaimed director duo Daniels. Starring Alex Karpovsky and Zoe Jarman",
-        meta: ["drama", "8 Minutes", "2019"]
+        meta: ["drama", "8 Minutes", "2019"],
+        videoLink: "https://eko.com/v/possibilia?autoplay=true"
       },
       {
         id: 4,
@@ -147,7 +157,9 @@ let playlists = [
           "https://res.cloudinary.com/dlkxfitke/image/upload/w_445,f_auto,q_auto/fl_lossy/falcon_storage/production/playlists/pfbdtt/vms-171108002536.jpg",
         title: "Virtual Morality",
         description: "Find the killer or die trying.",
-        meta: ["drama", "3 Episodes", "2019"]
+        meta: ["drama", "3 Episodes", "2019"],
+        videoLink:
+          "https://eko.com/pfbdtt/virtual-morality---episode-1?autoplay=true"
       },
       {
         id: 5,
@@ -156,7 +168,8 @@ let playlists = [
         title: "That Moment When",
         description:
           "Jill is a hot mess. It's up to YOU to navigate through a series of awkward moments that either leave her somewhat dignified or even hot-messier. Starring Milana Vayntrub, and created by Sandeep Parikh.",
-        meta: ["drama", "7 Episodes", "2019"]
+        meta: ["drama", "7 Episodes", "2019"],
+        videoLink: "https://eko.com/tmw/101?autoplay=true"
       },
       {
         id: 6,
