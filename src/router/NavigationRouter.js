@@ -153,16 +153,18 @@ const Search = styled.img`
 `;
 const Footer = styled.footer`
   background: rgba(0, 0, 0, 0.8);
-  position: fixed;
-  width: 100%;
-  left: 0;
-  bottom: 0;
+
   color: #ffffff;
-  height: auto;
   font-size: 0.8rem;
   text-align: center;
   padding: 0.5rem;
   z-index: 999;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
   & a {
     color: #ffffff;
     text-decoration: none;

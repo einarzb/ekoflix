@@ -4,22 +4,20 @@ import { heroItemAction, playlistAction } from "../redux/actions/index";
 
 import { Wrapper } from "../assets/theme";
 import Hero from "../components/Hero";
-import PlayList from "../components/Playlist";
+import PlayListsSection from "../components/PlayListsSection";
 
 class MainScreen extends React.Component {
   state = {
     heroItem: this.props.heroItem,
-    playlist: this.props.playlist
+    playlists: this.props.playlists
   };
   render() {
-    let { heroItem, playlist } = this.props;
+    let { heroItem, playlists } = this.props;
     return (
       <Fragment>
         <Wrapper>
           <Hero heroItem={heroItem}></Hero>
-          {/**TODO: create a component that accepts playlists  */}
-          <PlayList playlist={playlist}></PlayList>
-          <PlayList playlist={playlist}></PlayList>
+          <PlayListsSection playlists={playlists}></PlayListsSection>
         </Wrapper>
       </Fragment>
     );
@@ -29,14 +27,14 @@ class MainScreen extends React.Component {
 const mapStateToProps = state => {
   let props = {
     heroItem: state.heroReducer.heroItem,
-    playlist: state.playlistsReducer.playlist
+    playlists: state.playlistsReducer.playlists
   };
   return props;
 };
 
 const mapDispatchToProps = dispatch => ({
   heroItemRedux: heroItem => dispatch(heroItemAction(heroItem)),
-  playlistRedux: playlist => dispatch(playlistAction(playlist))
+  playlistRedux: playlists => dispatch(playlistAction(playlists))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainScreen);

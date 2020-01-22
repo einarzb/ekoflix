@@ -8,13 +8,13 @@ const Playlist = ({ playlist }) => {
       <Fragment>
         <Card key={i}>
           <Box src={movie.coverBg} />
+          <h1>{movie.title}</h1>
           <Data>
             <MetaTags>
               {movie.meta.map((metaTag, i) => (
                 <MetaTag key={i}>{metaTag}</MetaTag>
               ))}
             </MetaTags>
-            <h1>{movie.title}</h1>
             <Description>{movie.description}</Description>
           </Data>
         </Card>
@@ -42,6 +42,8 @@ const PlaylistWrapper = styled.div`
   z-index: 10;
   background: ${BlackShadow};
   height: 100%;
+  width: 99%;
+  overflow-y: scroll;
   & h2 {
     color: ${EkoPink};
     font-size: 1.2rem;
@@ -53,7 +55,6 @@ const PlaylistRow = styled.div`
   display: inline-flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-bottom: 1rem;
 `;
 
 const Slider = styled.div`
@@ -69,19 +70,18 @@ const Data = styled.div`
   flex-direction: column;
   width: 300px;
   margin: 0px auto;
-  & h1 {
-    margin: 0 1rem;
-    font-size: 1.5rem;
-  }
   & p {
     font-size: 1rem;
     display:block;
     margin: 0.5rem;
     width: auto;
     white-space: normal;
-    overflow-y: scroll;
+    overflow: scroll;
+    text-overflow:ellipsis;
+    height: 100px;
   }
   @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {
+    display:inline-flex;
     width: 100%;
     top: 2%
     padding: 2rem 0;
@@ -95,14 +95,18 @@ const Card = styled.div`
   flex-direction: column;
   box-sizing: content-box;
   background-color: ${DarkBlue};
-  height: 400px;
-  transition: all 0.2s ease-in-out;
   margin: 0 0.3rem;
   -webkit-box-shadow: 10px 10px 21px -4px rgba(0, 0, 0, 0.8);
   -moz-box-shadow: 10px 10px 21px -4px rgba(0, 0, 0, 0.8);
   box-shadow: 10px 10px 21px -4px rgba(0, 0, 0, 0.8);
+
+  & h1 {
+    margin: 0 0rem 0.5rem 2rem;
+    font-size: 1.5rem;
+  }
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.125);
+    z-index: 99;
     height: 400px;
     ${Data} {
       display: inline-flex;
