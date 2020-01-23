@@ -12,10 +12,6 @@ const Home = asyncComponent({
   resolve: () => import("../screens/MainScreen")
 });
 
-const MyList = asyncComponent({
-  resolve: () => import("../screens/MyListScreen")
-});
-
 class NavigationRouter extends Component {
   state = {
     isScrolling: false
@@ -58,7 +54,7 @@ class NavigationRouter extends Component {
               <Link to="/">recently added</Link>
             </Tab>
             <Tab>
-              <Link to="/mylist">
+              <Link to="/">
                 my list <img src={PLUS} width="10" />
               </Link>
             </Tab>
@@ -70,8 +66,6 @@ class NavigationRouter extends Component {
 
         <Switch>
           <Route exact path="/" component={Home}></Route>
-          <Route exact path="/mylist" component={MyList}></Route>
-
           <Redirect from="*" to="/" />
         </Switch>
 

@@ -7,7 +7,8 @@ let heroItem = [
     title: "Save The Dates",
     description:
       "An interactive comedy about the love life of Chelsea, who turns a blind date into four parallel-reality courtships. Throughout the series, try dating each guy and perhaps realize, once and for all, that the grass is never greener.",
-    meta: ["comedy", "3 Episodes", "2019"]
+    meta: ["comedy", "3 Episodes", "2019"],
+    movieLink: "https://eko.com/save-the-dates/MwmNGA?autoplay=true"
   }
 ];
 

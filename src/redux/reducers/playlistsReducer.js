@@ -61,7 +61,9 @@ let playlists = [
         title: "Charlie Gets Fired",
         description:
           "Charlie is a young lad trying to hold on to a job. But he suffers from user-interactivitis, a rare brain disease which means you get to choose his words for him. And you know what that means: Charlie gets fired. Have fun ruining his life!",
-        meta: ["drama", "8 Episodes", "2019"]
+        meta: ["drama", "8 Episodes", "2019"],
+        videoLink:
+          "https://eko.com/charlie/charlie-pitches-a-pilot?autoplay=true"
       }
     ]
   },
@@ -75,7 +77,8 @@ let playlists = [
         title: "Wizard School Dropout",
         description:
           "After defying her parents and becoming a wizard school dropout, Andy has to figure out how to make it on her own in decidedly non-magical Los Angeles.",
-        meta: ["comedy", "13 Episodes", "2019"]
+        meta: ["comedy", "13 Episodes", "2019"],
+        videoLink: "https://eko.com/wsd/the-eviction?autoplay=true"
       },
 
       {
@@ -85,7 +88,8 @@ let playlists = [
         title: "Timeline",
         description:
           "When Dee’s phone mysteriously gains the ability to see the future, she might just have a chance of going from a zero to a major hero at her high school.",
-        meta: ["drama", "8 Episodes", "2019"]
+        meta: ["drama", "8 Episodes", "2019"],
+        videoLink: "https://eko.com/timeline/what-the-future?autoplay=true"
       },
       {
         id: 4,
@@ -94,7 +98,8 @@ let playlists = [
         title: "The Coop",
         description:
           "Welcome to Season 39 of the most interactive reality show ever: The Coop! But be warned, there’s a murderer in our midst, and they are bringing a real toxic energy into the house, especially after they offed token house-hunk, Ryan.",
-        meta: ["drama", "15 Episodes", "2019"]
+        meta: ["drama", "15 Episodes", "2019"],
+        videoLink: "https://eko.com/the-coop/who-killed-ryan?autoplay=true"
       },
       {
         id: 5,
@@ -113,7 +118,9 @@ let playlists = [
         title: "Charlie Gets Fired",
         description:
           "Charlie is a young lad trying to hold on to a job. But he suffers from user-interactivitis, a rare brain disease which means you get to choose his words for him. And you know what that means: Charlie gets fired. Have fun ruining his life!",
-        meta: ["drama", "8 Episodes", "2019"]
+        meta: ["drama", "8 Episodes", "2019"],
+        videoLink:
+          "https://eko.com/charlie/charlie-pitches-a-pilot?autoplay=true"
       }
     ]
   },
@@ -178,7 +185,9 @@ let playlists = [
         title: "Charlie Gets Fired",
         description:
           "Charlie is a young lad trying to hold on to a job. But he suffers from user-interactivitis, a rare brain disease which means you get to choose his words for him. And you know what that means: Charlie gets fired. Have fun ruining his life!",
-        meta: ["drama", "8 Episodes", "2019"]
+        meta: ["drama", "8 Episodes", "2019"],
+        videoLink:
+          "https://eko.com/charlie/charlie-pitches-a-pilot?autoplay=true"
       }
     ]
   }

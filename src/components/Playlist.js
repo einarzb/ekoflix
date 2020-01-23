@@ -103,6 +103,8 @@ const Data = styled.div`
 `;
 
 const Play = styled.img`
+  cursor: pointer;
+
   display: none;
   position: absolute;
   width: 46px;
@@ -116,7 +118,6 @@ const Play = styled.img`
 `;
 
 const Card = styled.div`
-  cursor: pointer;
   position: relative;
   display: inline-flex;
   flex-direction: column;
@@ -155,6 +156,7 @@ const Card = styled.div`
 `;
 
 const Box = styled.img`
+  cursor: pointer;
   width: 350px;
   background-size: cover;
   @media screen and (max-aspect-ratio: 4/3) and (max-width: 480px) and (min-width: 0) {

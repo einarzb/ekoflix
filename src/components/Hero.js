@@ -20,7 +20,7 @@ const Hero = ({ heroItem }) => {
             ))}
           </MetaTags>
           <CtaWrap>
-            <a tabIndex="0" role="link" href="/">
+            <a tabIndex="0" role="link" href={item.movieLink}>
               play
             </a>
             <a tabIndex="0" role="link" href="/">
